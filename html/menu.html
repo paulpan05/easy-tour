@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+  <header class="masthead">
+    <div class="container h-100">
+      <div class="row h-100 align-items-center">
+        <div class="col-12 text-center">
+          <canvas id="menuChart"></canvas>
+        </div>
+      </div>
+    </div>
+  </header>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+  <script src="https://cdn.jsdelivr.net/gh/emn178/chartjs-plugin-labels/src/chartjs-plugin-labels.js"></script>
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+  <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script>
+    var ctx = document.getElementById('menuChart').getContext('2d');
+    var menuChart = new Chart(ctx, {
+      type: 'pie',
+      data: {
+        labels: ["Energetic",
+          "Exhilarating",
+          "Pleasant",
+          "Leisurely",
+          "Calm",
+          "Brooding",
+          "Melancholy",
+          "Thoughtful",
+          "Custom"
+        ],
+        datasets: [{
+          label: 'Tons of CO₂ saved',
+          data: [1, 1, 1, 1, 1, 1, 1, 1, 1],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.8)',
+            'rgba(54, 162, 235, 0.8)',
+            'rgba(255, 206, 86, 0.8)',
+            'rgba(75, 192, 192, 0.8)',
+            'rgba(153, 102, 255, 0.8)',
+            'rgba(255, 159, 64, 0.8)',
+            'rgba(43, 230, 190, 0.8)',
+            'rgba(25, 15, 255, 0.8)',
+            'rgba(0, 0, 0, 0.8)'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        legend: {
+          display: false
+        },
+        tooltips: {
+          enabled: false
+        },
+        plugins: {
+          labels: {
+            render: 'label',
+            fontSize: 18,
+            fontColor: 'rgba(255,255,255)'
+          }
+        }
+      }
+    });
+  </script>
+  <style>
+    .masthead {
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  </style>
+</body>
+
+</html>
